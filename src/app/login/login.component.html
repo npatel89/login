@@ -1,0 +1,22 @@
+<div class="login-container">
+    <div class="form-container">
+        <!-- Simple Textfield -->
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" [(ngModel)]="username" type="text" pattern="^[a-zA-Z0-9_-]{3,15}">
+            <label class="mdl-textfield__label" for="sample1">Username</label>
+            <span class="mdl-textfield__error">Please provide Username(3 - 15 characters)!</span>
+        </div>
+        <!-- Numeric Textfield -->
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" [(ngModel)]="password" type="password" pattern="^[a-zA-Z0-9_-]{3,15}">
+            <label class="mdl-textfield__label" for="sample2">Password</label>
+            <span class="mdl-textfield__error">Please provide password(3 - 15 characters)!</span>
+        </div>
+        <button (click)="login();" [disabled]="!(username && username.length > 2 && password && password.length > 2)"
+            class="mdl-button mdl-js-button mdl-button--raised">
+            Login
+        </button>
+
+    </div>
+</div>
+<div *ngIf="loading" class="overlay"></div>

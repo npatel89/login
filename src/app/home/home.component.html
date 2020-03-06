@@ -1,0 +1,13 @@
+<div class="home-container">
+    <h2>Types of Coffee</h2>
+    <div *ngIf="list && list.length" class="list">
+        <ul class="mdl-list">
+            <li class="mdl-list__item mdl-list__item--two-line" *ngFor="let item of list">
+              <span class="mdl-list__item-primary-content">
+                <span>{{ item.name }}</span>
+                <span class="mdl-list__item-sub-title">{{ item.desc }}</span>
+              </span>
+            </li>
+          </ul>
+    </div>
+</div>
